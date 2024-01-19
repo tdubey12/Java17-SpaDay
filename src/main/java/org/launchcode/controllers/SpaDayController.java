@@ -62,7 +62,14 @@ public class SpaDayController {
                 appropriateFacials.add(facials.get(i));
             }
         }
-
+            model.addAttribute("appropriateFacials",appropriateFacials);
+            model.addAttribute("name", name);
+            model.addAttribute("skintype",skintype);
+            model.addAttribute("manipedi",manipedi);
+            ArrayList<String> polishChoices =new ArrayList<>();
+            polishChoices.add("#ed435");
+            polishChoices.add("#63c295");
+            model.addAttribute("polishChoices",polishChoices);
         return "menu";
     }
 }
