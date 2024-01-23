@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<html lang="en">
+<head th:replace="fragments :: head"></head>
+<title>welcome</title>
+<body>
+    <h3 th:text="'welcome '+${user.username}"></h3>
+    <a th:href="@{/}">select your spa services></a>
+</body>
+</html>
