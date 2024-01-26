@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th = "http://www.thymeleaf.org/">
-<html lang="en">
 <head th:replace="fragments :: head"></head>
 
 <body>
     <form action="/user" method="POST">
-        <label>Username: <input type="text" name="username" th:value="${username}" required/></label>
-        <label>Email: <input type="email" name="email" th:value="${email}" /></label>
-        <label>Password: <input type="password" name="password" required /></label>
-        <label>Verify Password: <input type="password" name="verify" /></label>
-        <p class="error" th:if="${error}" th:text="${error}"></p>
+        <label>
+            Username:
+            <input th:field="${user.username}" />
+            <p th:errors="${user.username}"></p>
+        </label>
+        <label>
+            Email:
+            <input th:field ="${user.email}" />
+            <p th:errors="${user.email}"></p>
+        </label>
+        <label>
+            Password:
+            <input type='password' th:field="${user.password}" />
+            <p th:errors="${user.password}"></p>
+        </label>
+        <label>
+            Verify Password:
+            <input type="password" th:field="${user.verifyPassword}"/>
+            <p th:errors="${user.verifyPassword}"></p>
+        </label>
         <button type="submit">Sign Up</button>
     </form>
 </body>
